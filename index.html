@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="
+      min-h-screen
+      flex
+      items-center
+      justify-center
+      bg-gradient-to-r
+      from-indigo-500
+      via-purple-500
+      to-pink-500
+    "
+  >
+    <div
+      class="calculadora backdrop-blur-xl bg-white max-w-fit p-3 relative z-10"
+    >
+      <input
+        class="display mb-3 text-right px-5 text-[14pt] text-black"
+        type="text"
+      />
+      <div
+        class="calculadora-buttons-list grid grid-cols-4 grid-rows-5 gap-[1px]"
+      >
+        <button class="clear" data-key="AC">AC</button>
+        <button data-key="N">N</button>
+        <button data-type="%">%</button>
+        <button data-type="÷">÷</button>
+
+        <button data-key="7">7</button>
+        <button data-key="8">8</button>
+        <button data-key="9">9</button>
+        <button data-type="x">x</button>
+
+        <button data-key="4">4</button>
+        <button data-key="5">5</button>
+        <button data-key="6">6</button>
+        <button data-type="-">-</button>
+
+        <button data-key="1">1</button>
+        <button data-key="2">2</button>
+        <button data-key="3">3</button>
+        <button data-type="+">+</button>
+
+        <button data-key="0">0</button>
+        <button data-key=",">,</button>
+        <button class="submit col-span-2">=</button>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        const calculadora = new Calculadora({
+          target: $('.calculadora:first'),
+          keysList: $('[data-key]'),
+          typeList: $('[data-type]'),
+          display: $('.display:first'),
+          submit: $('.submit:first'),
+          clearBtt: $('.clear:first'),
+        });
+      });
+    </script>
+    <script src="wooflow.js"></script>
+  </body>
+</html>
